@@ -1,0 +1,269 @@
+.header {
+    width: 100%;
+    padding: 80px 60px;
+    height: 383px;
+    background-size: cover;
+    box-sizing: border-box;
+    background-color: #000000;
+    background-image:  url(/img/cinema00.png);
+    background-repeat: no-repeat;
+    background-position: bottom right; 
+    }
+    .headerdesc {
+    width: 300px;
+    height: 160px;
+    text-shadow:0px 0px 1px #000000;
+    font-family: 'Mulish';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 48px;
+    line-height: 80px;
+    letter-spacing: -0.02em;
+    color: #FFFFFF;
+    }
+    .span1 {
+    font-family: Mulish;
+    font-weight: 800;
+    }
+    .span2 {
+    font-weight: 800;
+    font-family: Mulish;
+    color: #f99e34;
+    }
+    .subheaderdesc {
+    width: 396px;
+    color: white;
+    text-shadow:0px 0px 2px #000000;
+    font-family: 'Mulish';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 24px;
+    line-height: 30px;
+    letter-spacing: -0.02em;
+    }
+    .contentBody {
+    box-sizing: border-box;
+    background: #FFFFFF;
+    height: fit-content;
+    width: 100%;
+    margin-bottom: 0px;
+    padding-bottom: 56px;
+    padding-top: 0px;
+    padding-left: 300px;
+    padding-right: 300px;
+    }
+    .foodLists {
+    width: 700px;
+    margin: auto;
+    }
+    .foodList > img {
+    margin-right: 22px;
+    }
+    .foodList {
+    padding-top: 8px;
+    padding-bottom: 8px;
+    width: 700px;
+    margin: auto;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    border-top: 1px solid rgba(36, 71, 196, 0.2);
+    border-bottom: 1px solid rgba(36, 71, 196, 0.2);
+    display: flex;
+    align-items: center;
+    height: fit-content;
+    }
+    .txt1 {
+    font-family: 'Mulish';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 30px;
+    letter-spacing: -0.02em;
+    color: #2447C4;
+    }
+    .line {
+    border: 1px solid rgba(36, 71, 196, 0.2);
+    width: 100%;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    }
+    .priceFoodList > p:nth-child(1) {
+    font-family: 'Mulish';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 30px;
+    letter-spacing: -0.02em;
+    margin: 0px;
+    }
+    .priceFoodList > p:nth-child(2) {
+    font-family: 'Mulish';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 18px;
+    margin: 0px;
+    letter-spacing: -0.02em;
+    }
+    .priceFoodList {
+    height: 100%;
+    display: inline-flex;
+    flex-direction: column;
+    justify-items: center;
+    margin-left: 22px;
+    gap: 4px;
+    margin: 0px;
+    }
+    .foodListBtn > img {
+    width: 44px;
+    }
+    .foodListBtn {
+    display: inline-flex;
+    margin-left: auto;
+    margin-right: 10px;
+    }
+    .minusBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(36, 71, 196, 0.1);
+    border-radius: 8px;
+    }
+    .counter {
+    font-family: 'Mulish';
+    font-style: normal;
+    font-size: 24px;
+    margin-left: 8px;
+    margin-right: 8px;
+    line-height: 30px;
+    text-align: center;
+    letter-spacing: -0.02em;
+    color: #011B40;      
+    }
+    .footerCard {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 736px;
+    margin: auto;
+    margin-right: 10px;
+    margin-left: 10px;
+    margin-top: 35px;
+    margin-bottom: 61px;
+    height: 130px;
+    background: #FFFFFF;
+    border: 1px solid rgba(1, 27, 64, 0.1);
+    box-sizing: border-box;
+    box-shadow: 0px 4px 71px rgba(1, 27, 64, 0.12);
+    border-radius: 10px;
+    padding-left: 32px;
+    padding-right: 32px;
+    }
+    .flex {
+    display: flex;
+    margin: auto;
+    flex-direction: column; 
+    gap: 20px;  
+    }
+    .flex2 {
+    display: flex;
+    gap: 20px;
+    }
+    .button {
+    display: flex;
+    cursor: pointer;
+    color: white;
+    font-style: normal;
+    margin-left: auto;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 30px;
+    letter-spacing: -0.02em;
+    width: 220px;
+    height: 53px;
+    justify-content: center;
+    align-items: center;
+    background: #2447C4;
+    border-radius: 10px;
+}
+.writeUp {
+    font-family: 'Mulish';
+    font-style: normal;
+    font-size: 20px;
+    line-height: 30px;
+    letter-spacing: -0.02em;
+    color: rgba(1, 27, 64, 0.7);
+    width: 310px;
+    height: 60px;
+}
+@media screen and (max-width: 700px) {
+    .header {
+        width: 100%;
+        padding: 60px 20px;
+    }
+    .headerdesc {
+        max-width: 600px;
+        width: auto;
+        height: auto;
+        font-size: 40px;
+        line-height: 50px;
+        margin-bottom: 0px;
+        }
+        .subheaderdesc {
+        max-width: 396px;
+        width: auto;
+        font-size: 18px;
+        line-height: 30px;
+        margin-top: 0px;
+        } 
+}
+@media screen and (max-width: 1170px) {
+        .flex1 > img {
+            width: 400px;
+            height: 400px;
+            border-radius: 10px;
+            object-fit: cover;
+        }
+        .flex2 {
+            flex-direction: column;
+        }
+        .flex2  img {
+            width: 400px;
+            height: 400px;
+            border-radius: 10px;
+            object-fit: cover;  
+        }
+        .writeUp {
+        max-width: 310px;
+        width: auto; 
+        text-align: center; 
+        }
+        .footerCard {
+            padding: 20px;
+            flex-direction: column;
+            width: 330px;
+            height: auto;
+        }
+        .button {
+            margin: auto;
+            margin-top: 30px;
+            margin-bottom: 10px;
+        }
+}
+@media screen and (max-width: 450px) {
+        .flex1 > img {
+            width: 300px;
+            height: 300px;
+            border-radius: 10px;
+            object-fit: cover;
+        }
+        .flex2 {
+            flex-direction: column;
+        }
+        .flex2  img {
+            width: 300px;
+            height: 300px;
+            border-radius: 10px;
+            object-fit: cover;  
+        }
+}

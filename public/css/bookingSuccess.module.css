@@ -1,0 +1,190 @@
+.header {
+width: 100%;
+background: #2447C4;
+height: 428px;
+background-repeat: no-repeat;
+padding-top: 115px;
+box-sizing: border-box;
+display: flex;
+justify-content: center;
+}
+.boxy {
+width: 731px;
+height: fit-content;
+padding: 32px;
+background: #FFFFFF;
+border: 1px solid rgba(1, 27, 64, 0.1);
+box-sizing: border-box;
+box-shadow: 0px 4px 71px rgba(1, 27, 64, 0.12);
+border-radius: 20px
+}
+.whitespace {
+background: white;
+width: 100%;
+height: 470px;
+}
+.card {
+display: flex;
+width: 100%;
+height: 154px;
+background: #FFFFFF;
+border: 1px solid rgba(1, 27, 64, 0.1);
+box-sizing: border-box;
+border-radius: 8px;
+}
+.flexChild11 {
+flex: 0.6;
+}
+.flexChild12 {
+flex: 1;
+padding-left: 15px;
+}
+.cardPara {
+font-family: 'Mulish';
+font-style: normal;
+font-weight: 700;
+font-size: 24px;
+line-height: 30px;
+letter-spacing: -0.02em;
+color: #2447C4; 
+margin-bottom: 2px;  
+}
+.item1 {
+display: inline-flex;
+width: fit-content;
+align-items: center;
+margin-left: 5px;
+margin-bottom: 0px;
+}
+.item2 {
+display: inline-flex;
+width: fit-content;
+align-items: center;
+margin-left: 5px;
+margin-bottom: 0px;
+}
+.item3 {
+display: inline-flex;
+width: fit-content;
+align-items: center;
+position: relative;
+top: -20px;
+left: 5px;
+}
+.item1 >img {
+margin-right: 8px;
+width: 24px;
+}
+.item2 >img {
+margin-right: 8px;
+width: 24px;
+}
+.item3 >img {
+margin-right: 8px;
+width: 24px;
+}
+.item1 > p {
+display: inline;
+}
+.item2 > p {
+display: inline;
+}
+.item3 > p {
+display: inline;
+}
+.flexy {
+display: flex;
+width: 300px;
+height: 40px;
+flex-direction: row;
+flex-wrap: wrap;
+} 
+.heading {
+font-family: 'Mulish';
+font-style: normal;
+font-weight: 700;
+font-size: 36px;
+line-height: 45px;
+letter-spacing: -0.02em;
+color: #2447C4;
+} 
+.idHead {
+font-family: 'Mulish';
+font-style: normal;
+font-weight: 700;
+font-size: 14px;
+line-height: 18px;
+letter-spacing: -0.02em;
+color: #2447C4;
+} 
+.bookingID {
+margin-top: 0px;
+font-family: 'Mulish';
+font-style: normal;
+font-weight: 700;
+font-size: 24px;
+line-height: 30px;
+letter-spacing: -0.02em;
+color: #011B40;
+}
+.note {
+font-family: 'Mulish';
+font-style: normal;
+font-weight: 700;
+font-size: 14px;
+line-height: 18px;
+letter-spacing: -0.02em;
+color: #2447C4;
+}
+.notes {
+width: 474px;
+font-family: 'Mulish';
+font-style: normal;
+font-weight: 500;
+font-size: 18px;
+line-height: 23px;
+letter-spacing: -0.02em;
+color: rgba(1, 27, 64, 0.7);
+}
+.line {
+border: 1px solid rgba(36, 71, 196, 0.15);
+position: relative;
+top: 52px;
+margin: -32px;
+}
+.boxyFoot {
+width: 100%;
+margin-top: 100px;
+}
+.boxyFootContact {
+display: inline-block;
+float: left;
+}
+.boxyFootBtn {
+display: inline-flex;
+float: right;
+justify-content: center;
+align-items: center;
+width: 193px;
+position: relative;
+top: 20px;
+height: 57px;
+background: #2447C4;
+border-radius: 10px;
+font-family: 'Mulish';
+font-style: normal;
+font-weight: 700;
+font-size: 24px;
+line-height: 30px;
+letter-spacing: -0.02em;
+color: #FFFFFF;
+}
+.contUs {
+font-family: 'Mulish';
+font-style: normal;
+font-weight: 700;
+font-size: 14px;
+line-height: 18px;
+letter-spacing: -0.02em;
+color: #2447C4;
+}
