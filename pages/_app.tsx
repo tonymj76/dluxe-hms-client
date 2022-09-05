@@ -1,8 +1,42 @@
-import '../styles/globals.css'
+import '../public/css/global.css';
 import type { AppProps } from 'next/app'
+import Layout from "../components/Layout";
+import {Provider} from "react-redux";
+import {storeFn, wrapper} from "redux/store";
+import { PersistGate } from 'redux-persist/integration/react';
+import { persistStore } from 'redux-persist';
+import {ErrorBoundary} from 'react-error-boundary'
+import { ToastContainer } from 'react-toastify';
+import {ErrorFallback} from "components/ErrorBoundary";
+import "react-toastify/dist/ReactToastify.css";
 
-function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+const persistor = persistStore(storeFn);
+
+function MyApp({ Component, pageProps, router }: AppProps) {
+  return (
+    <div>
+      <Provider store={storeFn}>
+          <PersistGate loading={<div>loading</div>} persistor={persistor}>
+            <ErrorBoundary
+              FallbackComponent={ErrorFallback}
+            >
+              <Layout>
+                <Component {...pageProps} key={router.route} />
+              </Layout>
+              <ToastContainer
+                position="top-right"
+                autoClose={8000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                draggable={true}
+                closeOnClick
+                pauseOnHover
+              />
+            </ErrorBoundary>
+          </PersistGate>
+      </Provider>
+    </div>
+  );
 }
 
-export default MyApp
+export default wrapper.withRedux(MyApp)
