@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import Styles from '@/public/css/cinema.module.css';
+import Styles from 'public/css/cinema.module.css';
 
 export default function Cinema() {
   return (
@@ -56,7 +56,6 @@ export default function Cinema() {
         </div>
       </div>       
     </div>
-
   </>
   )
 }

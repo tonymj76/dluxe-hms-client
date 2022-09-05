@@ -5,7 +5,7 @@ import {IRoom} from "types/responseType";
 const roomAPI = API.injectEndpoints({
   endpoints: (builder) => ({
     fetchRoom: builder.query<IRoom, null>({
-      query: () => ""
+      query: () => "/rooms"
     })
   }),
   overrideExisting: false,

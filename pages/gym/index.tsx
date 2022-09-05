@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import Styles from '../../public/css/gym.module.css';
+
 export default function Gym() {
   return (
     <>

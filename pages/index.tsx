@@ -27,7 +27,7 @@ export default function Home() {
   }
   return (
     <>
-      <Modal top='96px' display={modalDisp == true ? 'flex':'none'}>
+      <Modal top='96px' display={modalDisp ? 'flex':'none'}>
         <div className={Styles.modalContent}>
           <img src="/img/icons/close.svg" onClick={() => setModalDisp(false)} style={{
             float:'right',

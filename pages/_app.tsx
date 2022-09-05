@@ -22,16 +22,16 @@ function MyApp({ Component, pageProps, router }: AppProps) {
             >
               <Layout>
                 <Component {...pageProps} key={router.route} />
+                <ToastContainer
+                  position="top-right"
+                  autoClose={8000}
+                  hideProgressBar={false}
+                  newestOnTop={false}
+                  draggable={true}
+                  closeOnClick
+                  pauseOnHover
+                />
               </Layout>
-              <ToastContainer
-                position="top-right"
-                autoClose={8000}
-                hideProgressBar={false}
-                newestOnTop={false}
-                draggable={true}
-                closeOnClick
-                pauseOnHover
-              />
             </ErrorBoundary>
           </PersistGate>
       </Provider>

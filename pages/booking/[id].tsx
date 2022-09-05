@@ -2,7 +2,6 @@ import { useRouter } from 'next/router'
 import Head from 'next/head'
 import Styles from '../../public/css/bookingid.module.css'
 
-
 export default function BookingID() {
 const router = useRouter();
 const { id }  =  router.query;

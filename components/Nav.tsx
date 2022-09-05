@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import {useEffect, useState} from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { Menu, X } from 'react-feather';
@@ -23,10 +23,14 @@ function Nav({path}: any) {
     setBookingID('');
     setMenuState('white');
   }
+  useEffect(() => {
+    console.log(asPath)
+  }, [asPath])
+
   return (
     <>
       <div className={NavStyles.nav} style={{
-        display:(asPath =='/rooms/' || asPath =='/spa/' || asPath =='/gym/' || asPath =='/cinema/' || asPath =='/rooftop/' || asPath =='/')  ? 'flex':'none'
+        display:(asPath =='/rooms' || asPath =='/spa' || asPath =='/gym' || asPath =='/cinema' || asPath =='/rooftop' || asPath =='/')  ? 'flex':'none'
       }}>
         <img className={NavStyles.logo} src='../logo.svg' />
         <div style={{
