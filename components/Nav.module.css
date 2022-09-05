@@ -1,0 +1,246 @@
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #1F40B1;
+    width: 100%;
+    height: 96px;
+    position: sticky;
+}
+.logo {
+    margin-right: auto;
+    margin-left: 13px;
+}
+.navitems {
+    background: rgba(155, 231, 255, 0.2);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    box-sizing: border-box;
+    padding: 8px;
+    cursor: pointer;
+    height: 42px;
+}
+.mobileNavitems {
+    background: rgba(155, 231, 255, 0.2);
+    border-radius: 8px;
+    display: none;
+    align-items: center;
+    width: fit-content;
+    word-break: keep-all;
+    box-sizing: border-box;
+    padding: 8px;
+    cursor: pointer;
+    height: 42px;
+    margin-bottom: 55px; 
+}
+.navitems > p {
+    display: inline-block; 
+    color: white;  
+    font-weight: 300;
+}
+.mobileNavitems > p {
+    display: inline-block; 
+    color: white; 
+    font-weight: 300;
+    font-size: x-large;
+}
+.navitems > img {
+    display: inline-block;
+    margin-right: 8px;
+}
+.mobileNavitems > img {
+    display: inline-block;
+    margin-right: 8px;
+    width: 30px;
+}
+.input {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background: #FFFFFF;
+    border-radius: 6px;
+    height: 42px;
+    width: 217px;
+}
+.input > input {
+    float: left;
+    border: transparent solid 4px;
+    box-sizing: padding;
+    height: 32px;
+    padding-left: 11px;
+    font-family: Mulish;
+    font-weight: 400;
+    font-size: 15px;
+}
+.input > input:focus {
+    border: transparent solid 4px;
+    outline: none !important;
+}
+.input > input::placeholder {
+    font-family: Mulish;
+    color: rgba(1, 27, 64, 0.7);
+    font-weight: 400;
+    font-size: 15px;
+}
+.input > div {
+    float: right;
+    background: #9BE7FF;
+    border-radius: 5px;
+    width: 38px;
+    position: relative;
+    left: -2px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 38px;
+    cursor: pointer;
+}
+.scrollview::-webkit-scrollbar {
+    display: none;
+}
+.scrollview {
+    display: flex;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    overflow-x: scroll;
+}
+.menu {
+    display: none;
+    }
+.bookNow {
+    cursor: pointer;
+    width: 124px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #9BE7FF;
+    border-radius: 6px;
+    margin-left: 18px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 23px;
+    letter-spacing: -0.02em;
+    color: #011B40;
+}
+.input {
+    margin-left: 70px;
+}
+.mobileInput {
+    display: none;
+}
+@media screen and (max-width: 1160px) {
+    .input {
+        width: 150px;
+    }
+    .input > input {
+        width: 120px;
+    }
+    .bookNow {
+        display: none;
+    }
+    .logo {
+      width: 150px;  
+    }
+    .input {
+        margin-left: 5px;
+    }
+    .logo {
+        margin-right: 20px;
+    }
+}
+@media screen and (max-width:785px) {
+    .desktopNavItem {
+        display: none;
+        }
+        .navitems {
+        display: none;
+        } 
+        .input {
+        display: none;
+        }
+        .bookNow {
+        display: none;
+        cursor: pointer;
+        }
+        .logo {
+        width: 160px;
+        margin-right: auto;
+        margin-left: 15px;
+        }
+    .mobileNavitems {
+        display: flex;
+        cursor: pointer;
+        margin-bottom: 50px;
+        }
+        .menu {
+        display: block;
+        }
+    .mobileView {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        background-color: #2244ae;
+        height: 105%;
+        position: fixed;
+        top: -1px;
+        z-index: 9999;
+        }
+        .mobileInput {
+            display: flex;
+            position: relative;
+            top: -6px;
+            flex-direction: row;
+            align-items: center;
+            background: #FFFFFF;
+            border-radius: 6px;
+            margin-bottom: 30px;
+            height: calc(42px + 10px);
+            width: fit-content;
+        }
+        .mobileInput > input {
+            float: left;
+            border: transparent solid 4px;
+            box-sizing: padding;
+            height: calc(32px + 10px);
+            padding-left: 5px;
+            font-family: Mulish;
+            font-weight: 400;
+            font-size: 18px;
+        }
+    .mobileInput > input:focus {
+        border: transparent solid 4px;
+        outline: none !important;
+    }
+    .mobileInput > input::placeholder {
+        font-family: Mulish;
+        color: rgba(1, 27, 64, 0.7);
+        font-weight: 400;
+        font-size: 18px;
+    }
+    .mobileInput > div {
+        float: right;
+        background: #9BE7FF;
+        border-radius: 5px;
+        width: 60px;
+        position: relative;
+        left: -2px;
+        cursor: pointer;
+        overflow-x: hidden;
+        overflow-y: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: calc(38px + 10px);
+    }
+}
+/* Transition */
+.mobileViewTransition {
+    display: flex;
+    opacity: 1;
+}

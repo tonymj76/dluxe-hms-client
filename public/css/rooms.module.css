@@ -1,0 +1,824 @@
+.header {
+width: 100%;
+background-color: #2447C4;
+padding: 144px 84px;
+height: fit-content;
+box-sizing: border-box;
+background-image:  url(/img/home.png);
+background-repeat: no-repeat;
+background-position: bottom right;   
+}
+.holder {
+display: flex;
+align-items: center;
+justify-content: center;
+width: 100%;
+height: fit-content;
+}
+.switch1 {
+flex: 1;
+display: flex;
+justify-content: center;
+align-items: center;
+backdrop-filter: blur(20px);
+border-radius: 8px;
+font-style: normal;
+font-weight: 700;
+font-size: 14px;
+line-height: 23px;
+text-align: center;
+letter-spacing: -0.02em;
+/* transition: all .5s ease-in-out; */
+}
+.switch2 {
+flex: 1;
+display: flex;
+justify-content: center;
+align-items: center;
+font-style: normal;
+font-weight: 700;
+font-size: 14px;
+line-height: 23px;
+text-align: center;
+letter-spacing: -0.02em;
+backdrop-filter: blur(20px);
+border-radius: 8px;
+/* transition: all .5s ease-in-out; */
+}
+.switch {
+display: inline-flex;
+cursor: pointer;
+border-radius: 8px;
+width: 300px;
+height: 48px;
+background: rgba(36, 71, 196, 0.1);
+}
+.btnHolders {
+display: flex;
+gap: 16px;
+}
+.btn1 {
+font-family: 'Mulish';
+font-style: normal;
+font-weight: 500;
+font-size: 14px;
+line-height: 23px;
+display: flex;
+cursor: pointer;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+padding: 6px 20px;
+width: 104px;
+height: 48px;
+background: rgba(36, 71, 196, 0.1);
+border-radius: 10px;
+color: #2447C4;
+}
+.btn2 {
+cursor: pointer;
+font-family: 'Mulish';
+font-style: normal;
+font-weight: 500;
+font-size: 14px;
+line-height: 23px;
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+padding: 6px 20px;
+width: 104px;
+height: 48px;
+background: rgba(36, 71, 196, 0.1);
+border-radius: 10px;
+color: #2447C4;
+}
+.tools {
+display: flex;
+width: 100%;
+height: fit-content;
+box-sizing: border-box;
+padding-top: 10px;
+padding-left: 10px;
+padding-right: 10px;
+margin-top: 10px;
+margin-bottom: 20px;
+}
+.btnCenter {
+width: 100%;
+display: flex;
+justify-content: center;
+}
+@media screen and (max-width: 557px) {
+.tools {
+display: block; 
+}
+.holder {
+margin-bottom: 10px;
+}
+}
+.headerdesc {
+width: 533px;
+height: 160px;
+font-family: 'Mulish';
+font-style: normal;
+font-weight: 500;
+font-size: 64px;
+line-height: 80px;
+letter-spacing: -0.02em;
+color: #FFFFFF;
+}
+.subheaderdesc {
+width: 396px;
+height: 200px;
+color: white;
+font-family: 'Mulish';
+font-style: normal;
+font-weight: 300;
+font-size: 24px;
+line-height: 30px;
+letter-spacing: -0.02em;
+}
+.sectionParent {
+display: flex;
+justify-content: center;
+flex-direction: column;
+}
+.section3 {
+background-color: #fefefe;  
+box-sizing: border-box
+;
+padding: 20px;
+display: flex;
+justify-content: center;
+flex-direction: column;
+margin: auto;
+height: fit-content; 
+}
+.section3Heading {
+font-family: 'Mulish';
+font-style: normal;
+font-weight: 700;
+font-size: 36px;
+line-height: 45px;
+letter-spacing: -0.02em;
+color: #011B40;
+}
+.section3Flex {
+display: flex;
+gap: 10px;
+margin-bottom: 10px;
+}
+.section3FlexItem {
+display: flex;
+width: 566px;
+height: 304px;
+background: #FFFFFF;
+border: 1px solid rgba(1, 27, 64, 0.1);
+box-sizing: border-box;
+box-shadow: 0px 4px 71px rgba(1, 27, 64, 0.12);
+border-radius: 20px;
+}
+.h3 {
+font-family: 'Mulish';
+font-style: normal;
+font-weight: 700;
+font-size: 24px;
+line-height: 30px;
+letter-spacing: -0.02em;
+color: #2447C4;
+}
+.spany {
+font-family: 'Mulish';
+font-style: normal;
+font-weight: 500;
+font-size: 18px;
+line-height: 23px;
+letter-spacing: -0.02em;
+color: rgba(1, 27, 64, 0.7);
+}
+.section3Btn {
+display: inline-flex;
+align-items: center;
+justify-content: center;
+width: 124px;
+height: 44px;
+cursor: pointer;
+position: relative;
+top: -15px;
+background: #2447C4;
+border-radius: 8px;
+margin-left: 22px;
+color: white;
+}    
+.modalContent {
+max-width: 600px;
+width: auto;
+background: #FFFFFF;
+border: 1px solid rgba(1, 27, 64, 0.1);
+box-sizing: border-box;
+padding: 32px;
+box-shadow: 0px 4px 71px rgba(1, 27, 64, 0.12);
+border-radius: 20px;
+height: fit-content;
+}
+.moneyX {
+    font-family: Mulish;
+    font-style: normal;
+    font-weight: 700;
+    margin: 0px;
+    font-size: 24px;
+    line-height: 30px;
+    letter-spacing: -0.02em;
+    color: #011B40; 
+}
+.includeX {
+    font-family: Mulish;
+    font-style: normal;
+    font-weight: 500;
+    margin: 0px;
+    font-size: 14px;
+    line-height: 18px;
+    letter-spacing: -0.02em;
+    color: rgba(1, 27, 64, 0.7);
+}
+.tinyFucks {
+    position: relative;
+    top: 5px;
+    margin-right: 5px; 
+}
+.adjy {
+display:inline-block;
+width:146px;
+height:48px;
+margin-top:34px;
+}
+@media screen and (max-width:500px){
+    .btnX {
+      float: none;
+      position: relative;
+      top: 15px;
+      width: 1000px;
+      text-align: center;
+      } 
+  .modalContent {
+      width: 350px;
+  } 
+  .txt1 {
+      margin-top: 20px;
+  }
+}
+
+.heading {
+font-family: 'Mulish';
+font-style: normal;
+font-weight: 700;
+font-size: 28px;
+line-height: 45px;
+letter-spacing: -0.02em;
+color: #2447C4;
+}
+.description {
+font-family: 'Mulish';
+font-style: normal;
+font-weight: 500;
+font-size: 14px;
+line-height: 18px;
+letter-spacing: -0.02em;
+color: #2447C4;
+}
+.descText {
+max-width: 474px;
+width: auto;
+height: auto;
+font-family: 'Mulish';
+font-style: normal;
+font-weight: 500;
+font-size: 18px;
+line-height: 23px;
+margin-bottom: -20px;
+letter-spacing: -0.02em;
+color: rgba(1, 27, 64, 0.7);    
+}
+.line {
+width:112%;
+position: relative;
+left: -6%;
+border: 1px solid rgba(36, 71, 196, 0.15);
+position: relative;
+margin-top: 32px;
+margin-bottom: 32px;
+}
+.txt1 {
+font-family: 'Mulish';
+font-style: normal;
+font-weight: 500;
+font-size: 14px;
+line-height: 18px;
+letter-spacing: -0.02em;
+color: #2447C4;
+}
+.flex1Item > p {
+font-family: 'Mulish';
+font-style: normal;
+font-size: 15px;
+word-break: keep-all;
+line-height: 23px;
+letter-spacing: -0.02em;
+color: rgba(1, 27, 64, 0.7);
+}
+.flex1Item > img {
+margin-right: 8px;
+}
+.flex1Item {
+display: flex;
+width: fit-content;
+height: 24px;
+margin-bottom: 18px;
+align-items: center;
+margin-right: 24px;
+}
+.money > p:nth-child(2) {
+margin: 0px;
+padding: 0px;
+font-family: 'Mulish';
+font-style: normal;
+font-weight: 500;
+font-size: 14px;
+line-height: 18px;
+letter-spacing: -0.02em;
+color: rgba(1, 27, 64, 0.7);
+}
+.money > p:nth-child(1) {
+margin: 0px;
+padding: 0px;
+width: 135px;
+height: 30px;
+font-family: 'Mulish';
+font-style: normal;
+font-weight: 700;
+font-size: 24px;
+line-height: 30px;
+letter-spacing: -0.02em;
+color: #011B40;
+}
+.money {
+display: inline-block ;
+width: 148px;
+float: left;
+}
+.btnX {
+cursor: pointer;
+float: right;
+font-family: 'Mulish';
+font-style: normal;
+font-weight: 700;
+font-size: 18px;
+line-height: 30px;
+letter-spacing: -0.02em;
+color: #FFFFFF;
+display: flex;
+justify-content: center;
+align-items: center;
+width: 155px;
+height: 57px;
+background: #2447C4;
+border-radius: 10px;
+}
+.loll {
+    display:inline-block;
+    width: 222px;
+    position: relative;
+    height: 280px;
+    left: 12px;
+    top: 12px;
+    background: #C4C4C4;
+    border-radius: 15px;   
+}
+.lolly {
+    display:inline-block;
+    width: 222px;
+    position: relative;
+    height: 280px;
+    left: 25px;
+    top: -25px;
+}
+@media screen and (max-width: 600px) {
+    .subheaderdesc {
+        margin-bottom: 00px;
+    }    
+}
+@media screen and (max-width: 535px) {
+        .tinyFucks {
+            width: 16px;
+        }
+        .bookNow {
+            width: calc(152px - 20px);
+            height: 50px;
+            cursor: pointer;
+            font-size: 17;
+        }
+        .spany {
+          font-size: 13px;  
+        }
+        h3.section3Heading {
+            font-size: 20px;
+            margin-bottom: 0px;
+        }
+        .adjy {
+            margin-top:10px;  
+            height: 20px; 
+        }
+        .viewAll {
+            width: 350px;
+        }
+        .h3 {
+            font-size: 16px;
+            margin-bottom: 0px;
+            margin-top: 0px;
+            width: auto;
+        }
+        .loll {
+            margin:0px;
+            width: 150px;
+            height: auto;
+        }
+        .section3Btn {
+           font-size: medium;
+           width: 95px;
+           height: 35px;; 
+        }
+        .lolly {
+            max-width: 150px;
+            width: auto;
+            height: auto;
+            left: 20px;
+        }
+        .section3FlexItem {
+            padding: 0px;
+            margin-right: 6px;
+            height: 100px;
+        }
+        .includeX {
+            font-size: 10px;
+        }
+        .moneyX {
+            margin-top: 0px;
+            font-size: 16px;
+        }
+    .subheaderdesc {
+        margin-bottom: 600px;
+    }
+}
+@media screen and (max-width: 1311px) {
+    .switch {
+        display: flex;
+        width: 300px;
+    }
+    .section2Line {
+        width: 82.5px;
+    }
+    .h3 {
+        width: auto;
+    }
+    .section3FlexItem {
+        padding-right: 10px;
+        padding-bottom: 15px;
+        max-width: 566px;
+        width: auto;
+        height: fit-content;
+    }
+    .section3Flex {
+        flex-direction: column;
+    }
+    .section2 {
+        background-image: url(/img/scenic-bg.png);
+        height: fit-content;
+        background-origin: border-box;
+        padding-left: 20px;
+        }
+        .section3Btn {
+        display: flex; 
+        top: 10px;
+        left: -20px;
+        }
+        .section3Heading {
+        margin-left: 20px;
+        font-size: 30px;
+        }
+        .section2Child {
+        max-width: 612px;
+        width: auto;
+        height: auto;
+        padding: 20px 20px;
+        }
+        .section2ChildHeader{
+        width: 300px;
+        height: auto;
+        }
+        .section2ChildPara{
+        width: auto;
+        max-width: 558px;
+        height: auto;
+        font-family: 'Mulish';
+        font-style: normal;
+        font-weight: 300;
+        font-size: 24px;
+        line-height: 30px;
+        letter-spacing: -0.02em;
+        color: #FFFFFF;
+        margin-bottom: 0px;
+        }
+        .section2ChildCounter{
+        position: relative;
+        max-width: 600px;
+        width: auto;
+        height: auto;
+        font-family: 'Mulish';
+        font-style: normal;
+        font-weight: 900;
+        font-size: 64px;
+        line-height: 80px;
+        letter-spacing: -0.02em;
+        color: #FFFFFF;
+        }        
+    .seg2 {
+        box-sizing: border-box;
+        padding-left: 10px;
+        }
+    .paraSeg {
+        width: 300px;
+        height: auto;
+        font-size: 24px;
+        }
+    .headerSeg {
+        width:300px;
+        height: auto;
+        font-style: normal;
+        }
+        .section1Seg {
+            flex-direction: column;
+        }
+        .sectionXSeg {
+            flex-direction: column;
+        }
+        .topServicestxt2 {
+        max-width: 648px;
+        padding: 5px;    
+        width: auto;
+        }
+        .header {
+        text-shadow: 0px 0px 1px black;
+        height: auto;
+        padding: 50px 50px;
+        background-size: 500px auto;
+        }
+        .headerdesc {
+        max-width: 500px;
+        text-shadow: 0px 0px 1px black;
+        width: auto;
+        height: auto;
+        font-size:40px;
+        line-height: 50px;
+        }
+        .subheaderdesc {
+        width: auto;
+        max-width: 500px;
+        margin-bottom: 100px;
+        color: white;
+        }
+        .span1 {
+            font-size:35px;   
+        }
+        .bookNow {
+        text-shadow: none;
+        margin-bottom: 200px;
+        cursor: pointer;
+        } 
+}
+@media screen and (max-width: 450px) {
+        .header {
+        background-size: 350px auto;
+        }
+}
+/* Fucking Cards */
+.flex1 > img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-top-left-radius: 12px;
+  }
+.bookingCardSection {
+    margin-bottom: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    width: 100%;
+    justify-content: center;
+    height: fit-content;
+  }
+  
+  .bookingCard {
+      display: flex;
+      flex-direction: column;
+      width: 566px;
+      height: 350px;
+      background: #FFFFFF;
+      box-shadow: 0px 2.36842px 42.0395px rgba(1, 27, 64, 0.12);
+      border-radius: 12px;
+    }
+    .bookingCardBtn {
+        display: flex;
+        cursor: pointer;
+        margin-left: auto;
+        margin-right: 20px;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        width: 124px;
+        height: 44px;
+        background: #2447C4;
+        border-radius: 4.73684px;
+        font-family: 'Mulish';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 18px;
+        color: white;
+    }
+    .bookingCardItem1 {
+      flex: 3;
+      display: flex;
+    }
+    .bookingCardItem2 {
+      flex: 1;
+      border-top: 1px solid rgba(1, 27, 64, 0.1);
+      display: flex;
+      align-items: center;
+    }
+    .bookingCardPriceTag {
+    display: inline-block;
+    margin-right: auto;
+    margin-left: 17px;
+    margin-top: -10px;
+    }
+    .bookingCardPriceTag > h3 {
+    font-family: 'Mulish';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    letter-spacing: -0.02em;
+    color: #011B40;
+    margin-bottom: 0px;
+    }
+    .bookingCardPriceTag > p {
+    font-family: 'Mulish';
+    margin-top: 0px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    letter-spacing: -0.02em;
+    color: rgba(1, 27, 64, 0.7);    
+    }
+    .bookingCardItem1 > .flex1 {
+      flex: 1.9;
+      height: 265px;
+      border-top-left-radius: 12px;
+    }
+    .bookingCardItem1 > .flex2 {
+      flex: 2.3;
+      padding: 20px;
+      border-top-right-radius: 12px;
+    }
+    .cardH3 {
+        font-family: 'Mulish';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 24px;
+        margin-top: 0px;
+        letter-spacing: -0.02em;
+        color: #2447C4;
+    }
+    .cardItem {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        font-family: 'Mulish';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 13px;
+        letter-spacing: -0.02em;
+        color: rgba(1, 27, 64, 0.7); 
+    }
+    .cardItem:nth-of-type(1) {
+        margin-bottom: 25px;
+    }
+    .cardItem:nth-of-type(2) {
+        margin-bottom: 25px;
+    }
+    .cardItem > img {
+      width: 24px;
+    }
+  @media screen and (max-width:610px) {
+      .cardItem > img {
+        width: 12px;
+      }
+      .bookingCard {
+          display: flex;
+          flex-direction: column;
+          width: 300px;
+          height: 200px;
+          background: #FFFFFF;
+          box-shadow: 0px 2.36842px 42.0395px rgba(1, 27, 64, 0.12);
+          border-radius: 12px;
+        }
+        .bookingCardBtn {
+            display: flex;
+            cursor: pointer;
+            margin-left: auto;
+            margin-right: 20px;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            width: 70.68px;
+            height: 25.43px;
+            background: #2447C4;
+            border-radius: 4.73684px;
+            font-family: 'Mulish';
+            font-style: normal;
+            font-weight: 700;
+            font-size: 10px;
+            color: white;
+        }
+        .bookingCardItem1 {
+          flex: 3;
+          display: flex;
+        }
+        .bookingCardItem2 {
+          flex: 1;
+          border-top: 1px solid rgba(1, 27, 64, 0.1);
+          display: flex;
+          align-items: center;
+        }
+        .bookingCardPriceTag {
+        display: inline-block;
+        margin-right: auto;
+        margin-left: 17px;
+        margin-top: -10px;
+        }
+        .bookingCardPriceTag > h3 {
+        font-family: 'Mulish';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 14px;
+        letter-spacing: -0.02em;
+        color: #011B40;
+        margin-bottom: 0px;
+        }
+        .bookingCardPriceTag > p {
+        font-family: 'Mulish';
+        margin-top: 0px;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 8px;
+        letter-spacing: -0.02em;
+        color: rgba(1, 27, 64, 0.7);    
+        }
+        .bookingCardItem1 > .flex1 {
+          flex: 1.9;
+          height: 150px;
+          border-top-left-radius: 12px;
+        }
+        .bookingCardItem1 > .flex2 {
+          flex: 2.3;
+          padding: 20px;
+          border-top-right-radius: 12px;
+        }
+        .cardH3 {
+            font-family: 'Mulish';
+            font-style: normal;
+            font-weight: 700;
+            font-size: 14px;
+            margin-top: 0px;
+            letter-spacing: -0.02em;
+            color: #2447C4;
+        }
+        .cardItem {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            font-family: 'Mulish';
+            font-style: normal;
+            font-weight: 500;
+            font-size: 10px;
+            line-height: 13px;
+            letter-spacing: -0.02em;
+            color: rgba(1, 27, 64, 0.7); 
+        }
+        .cardItem:nth-of-type(1) {
+            margin-bottom: 12px;
+        }
+        .cardItem:nth-of-type(2) {
+            margin-bottom: 12px;
+        }
+  }

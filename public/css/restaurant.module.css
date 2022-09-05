@@ -1,0 +1,417 @@
+.header {
+    width: 100%;
+    padding: 80px 60px;
+    height: 383px;
+    background-color: black;
+    box-sizing: border-box;
+    background-size: cover;
+    background-image:  url(/img/restaurant.png);
+    background-position: bottom right; 
+    }
+    .section1 {
+        margin: 0 10px;
+        background: #f4f6fc;
+        height: fit-content;
+        display: flex;
+        }
+        .section1Seg {
+        margin: auto;
+        display: flex;
+        gap: 81px;
+        }
+        .sectionXSeg {
+        margin: auto;
+        flex-direction: row-reverse;
+        display: flex;
+        gap: 0px;
+        }
+        .seg1 {
+        flex:1;
+        }
+        .seg2 {
+        flex:1;
+        display:flex;
+        flex-direction:column;
+        background: white;
+        align-items: center;
+        box-sizing: border-box;
+        justify-content: center;
+        }
+        .seg2X {
+        flex:1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        }
+        .headerSeg {
+        width:500px;
+        margin-bottom: 0px;
+        height: 45px;
+        font-family: 'Mulish';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 30px;
+        line-height: 45px;
+        letter-spacing: -0.02em;
+        color: #2447C4;
+        }
+        .paraSeg {
+        margin-top: 16px;
+        width: 454px;
+        height: 90px;
+        font-family: 'Mulish';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 30px;
+        letter-spacing: -0.02em;
+        color: rgba(1, 27, 64, 0.7);
+        }        
+    .headerdesc {
+    width: 533px;
+    height: 160px;
+    font-family: 'Mulish';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 64px;
+    line-height: 80px;
+    letter-spacing: -0.02em;
+    color: #FFFFFF;
+    }
+    .subheaderdesc {
+    width: 396px;
+    color: white;
+    font-family: 'Mulish';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 24px;
+    line-height: 30px;
+    letter-spacing: -0.02em;
+    }
+    .contentBox {
+    box-sizing: border-box;
+    background: #f4f6fc;
+    height: fit-content;
+    width: 100%;
+    padding-top: 80px;
+    padding-bottom: 80px;
+    }
+    .foodLists {
+    width: 650px;
+    margin: auto;
+    }
+    .foodList > img {
+    margin-right: 22px;
+    }
+    .foodList {
+    padding-top: 8px;
+    padding-bottom: 8px;
+    width: 700px;
+    margin: auto;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    border-top: 1px solid rgba(36, 71, 196, 0.2);
+    border-bottom: 1px solid rgba(36, 71, 196, 0.2);
+    display: flex;
+    align-items: center;
+    height: fit-content;
+    }
+    .txt1 {
+    font-family: 'Mulish';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 30px;
+    letter-spacing: -0.02em;
+    color: #2447C4;
+    }
+    .line {
+    border: 1px solid rgba(36, 71, 196, 0.2);
+    width: 100%;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    }
+    .priceFoodList > p:nth-child(1) {
+    font-family: 'Mulish';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 30px;
+    letter-spacing: -0.02em;
+    margin: 0px;
+    }
+    .priceFoodList > p:nth-child(2) {
+    font-family: 'Mulish';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 18px;
+    margin: 0px;
+    letter-spacing: -0.02em;
+    }
+    .priceFoodList {
+    height: 100%;
+    display: inline-flex;
+    flex-direction: column;
+    justify-items: center;
+    margin-left: 22px;
+    gap: 4px;
+    margin: 0px;
+    }
+    .foodListBtn > img {
+    width: 44px;
+    }
+    .foodListBtn {
+    display: inline-flex;
+    margin-left: auto;
+    margin-right: 10px;
+    }
+    .minusBtn {
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    background: rgba(36, 71, 196, 0.1);
+    border-radius: 8px;
+    }
+    .counter {
+    font-family: 'Mulish';
+    font-style: normal;
+    font-size: 24px;
+    margin-left: 8px;
+    margin-right: 8px;
+    line-height: 30px;
+    text-align: center;
+    letter-spacing: -0.02em;
+    color: #011B40;      
+    }
+    .footerCard {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 35px;
+    margin-bottom: 61px;
+    height: 130px;
+    margin-right: 10px;
+    margin-left: 10px;
+    background: #FFFFFF;
+    border: 1px solid rgba(1, 27, 64, 0.1);
+    box-sizing: border-box;
+    box-shadow: 0px 4px 71px rgba(1, 27, 64, 0.12);
+    border-radius: 10px;
+    padding-left: 32px;
+    padding-right: 32px;
+    }
+    .button {
+    display: flex;
+    cursor: pointer;
+    color: white;
+    font-style: normal;
+    margin-left: auto;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 30px;
+    letter-spacing: -0.02em;
+    width: 104px;
+    height: 57px;
+    justify-content: center;
+    align-items: center;
+    background: #2447C4;
+    border-radius: 10px;
+}
+.writeUp > p:nth-child(1) {
+    font-family: 'Mulish';
+    font-style: normal;
+    margin: 0px;
+    font-size: 14px;
+    line-height: 18px;
+    letter-spacing: -0.02em;
+    color: rgba(1, 27, 64, 0.7);
+}
+.writeUp > p:nth-child(2) {
+    font-family: 'Mulish';
+    font-style: normal;
+    margin: 0px;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 30px;
+    letter-spacing: -0.02em;
+    color: #011B40;
+}
+.writeUp {
+    display: flex;
+    flex-direction: column;
+    margin-right: auto;
+    height: 48px;
+}
+.overlay {
+    position: absolute;
+    width: 100%;
+    height: 383px;
+    top: 96px;
+    left: 0px; 
+    padding: 80px 60px;
+    box-sizing: border-box;
+    background: rgba(1,27,64, 0.5);
+    margin:0;   
+}
+@media screen and (max-width: 790px) {
+    .overlay {
+        padding: 50px 30px;   
+    }
+    .foodLists {
+        position: relative;
+        left: -10px;
+        max-width: 650px;
+        width: 330px;
+        margin: auto;
+    }
+    .counter > p {
+        font-size: large;
+    }
+    .priceFoodList  {
+        margin-left: -18px;
+    }
+    .priceFoodList > p:nth-child(1) {
+        font-size: 20px;   
+    }
+    .foodListBtn > img {
+        width: 30px;
+    }
+    .foodList {
+        padding-top: 8px;
+        padding-bottom: 8px;
+        width: 330px;
+        max-width: 650px;
+        margin: auto;
+    }
+    .headerdesc {
+        padding-top: 30px;
+        max-width: 500px;
+        width: auto;
+        height: auto;
+        font-size: 45px;
+        line-height: 50px;
+        margin-bottom: 0px;
+        }
+        .subheaderdesc {
+        max-width: 396px;
+        width: auto;
+        font-size: 18px;
+        line-height: 30px;
+        margin-top: 0px;
+        } 
+}
+@media screen and (max-width: 1311px) {
+    .imgX {
+        width: 40px;
+    }  
+    .seg2X {
+        top: -88px;
+        position: relative;
+        padding-left: 15px;
+        margin-bottom: -50px;
+        justify-content: flex-start;
+      }
+      .seg2 {
+        padding-left: 5px;
+      }
+      .headerSeg {
+        font-size: 30px; 
+        margin-bottom: 0px;
+      }
+      .paraSeg {
+        font-size: 18px; 
+        margin-top: 11px;
+      }
+    .section2Line {
+        width: 82.5px;
+    }
+    .h3 {
+        width: auto;
+    }
+    .section3FlexItem {
+        padding-right: 10px;
+        padding-bottom: 15px;
+        max-width: 566px;
+        width: auto;
+        height: fit-content;
+    }
+    .section3Flex {
+        flex-direction: column;
+    }
+    .section2 {
+        background-image: url(/img/scenic-bg.png);
+        height: fit-content;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-origin: border-box;
+        padding-left: 20px;
+        }
+        .section3Btn {
+        display: flex; 
+        top: 10px;
+        left: -20px;
+        }
+        .section3Heading {
+        margin-left: 20px;
+        font-size: 30px;
+        }
+        .section2Child {
+        max-width: 612px;
+        width: auto;
+        height: auto;
+        padding: 20px 20px;
+        }
+        .section2ChildHeader{
+        width: 300px;
+        height: auto;
+        }
+        .section2ChildPara{
+        width: auto;
+        max-width: 558px;
+        height: auto;
+        font-family: 'Mulish';
+        font-style: normal;
+        font-weight: 300;
+        font-size: 18px;
+        line-height: 30px;
+        letter-spacing: -0.02em;
+        color: #FFFFFF;
+        margin-bottom: 0px;
+        }
+        .section2ChildCounter{
+        position: relative;
+        max-width: 600px;
+        width: auto;
+        height: auto;
+        line-height: 80px;
+        letter-spacing: -0.02em;
+        color: #FFFFFF;
+        }        
+    .seg2 {
+        box-sizing: border-box;
+        padding-left: 10px;
+        }
+    .seg2X {
+        box-sizing: border-box;
+        padding-left: 10px;
+        }
+    .paraSeg {
+        width: 300px;
+        height: auto;
+        font-size: 18px;
+        }
+    .headerSeg {
+        width:300px;
+        height: auto;
+        font-style: normal;
+        }
+        .section1Seg {
+            flex-direction: column;
+        }
+        .sectionXSeg {
+            flex-direction: column;
+        }
+}
