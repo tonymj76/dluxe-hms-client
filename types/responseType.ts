@@ -18,3 +18,11 @@ export enum CategoryType {
   ROOM = 'rooms',
   APARTMENT= "apartment"
 }
+
+export interface IFormInput {
+  firstName: string;
+  lastName: string;
+  phoneNumber: string;
+  email: string;
+  ride: boolean;
+}
