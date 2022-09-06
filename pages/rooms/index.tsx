@@ -1,6 +1,5 @@
 import React, {useState, useRef, useEffect, useMemo} from 'react'
 import Modal from '../../components/Modal'
-import Calendar from 'react-calendar';
 import ModalOneStyle from '../../components/BookNow.module.css';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from 'react-responsive-carousel';
@@ -8,27 +7,37 @@ import Styles from '../../public/css/rooms.module.css';
 import {useFetchRoomQuery} from "redux/services/room";
 import {PageHead} from "components/pageHead";
 import  RoomItems from "components/roomItems";
-import {IRoom} from "types/responseType";
+import {IFormInput, IRoom} from "types/responseType";
+import { useForm, SubmitHandler } from "react-hook-form";
+import CalenderRange, {IOnChange} from "components/calenderRange";
+import {addDays} from "date-fns";
+import {formatDate} from "types/helper";
 
 export default function Rooms() {
-  const [calendarDisp1, setCalendarDisp1] = useState(false);
   const [selectedRoom, setSelectedRoom] = useState<IRoom>();
   const [calendarDisp2, setCalendarDisp2] = useState(false);
   const [modalDisp, setModalDisp] = useState(false);
   const [modalDisp1, setModalDisp1] = useState(false);
-  const [value1, setValue1] = useState(new Date());
+
+  const [state, setState] = useState<IOnChange>(
+    {
+      startDate: addDays(new Date(), 0),
+      endDate: addDays(new Date(), 1),
+      key: 'selection'
+    }
+  );
   const {data: roomData, isFetching } = useFetchRoomQuery(null, {
     skip: false,
   })
 
+  const { register, handleSubmit } = useForm<IFormInput>();
+  const onSubmit: SubmitHandler<IFormInput> = data => console.log(data);
 
   const rooms = useMemo(() => {
     if(!roomData) return [];
     return [...roomData?.data]
   }, [roomData])
 
-  useEffect(() => {
-    console.log(selectedRoom)}, [selectedRoom])
   useEffect(() => {
     switch2.current.classList.add('switchOut');
     switch1.current.classList.add('switchIn');
@@ -48,16 +57,9 @@ export default function Rooms() {
     }
   }, [tab]);
 
-
-  function onChange1(nextValue: any) {
-    setValue1(nextValue);
-    setCalendarDisp1(false);
-  }
-  const [value2, setValue2] = useState(new Date())
-
   function onChange2(nextValue: any) {
-    setValue2(nextValue);
-    setCalendarDisp2(false);
+    setState(nextValue);
+    setTimeout(() =>{setCalendarDisp2(false);}, 3000)
   }
 
   const switch1 = useRef(null);
@@ -124,87 +126,115 @@ export default function Rooms() {
               </div>
             </div>
           </div>
-          <div className={ModalOneStyle.form}>
-            <div className={ModalOneStyle.formItem1}>
-              <div>
-                <label htmlFor="phone">Phone Number</label><br />
-                <input type="tel" placeholder="Enter your phone number" id="phone" />
+          <form onSubmit={handleSubmit(onSubmit)}>
+            <div className={ModalOneStyle.form}>
+              <div className={ModalOneStyle.formItem1}>
+                <div>
+                  <label htmlFor="phone">Phone Number</label><br />
+                  <input
+                    placeholder="Enter your phone number"
+                    id="phone"
+                    required
+                    {...register("phoneNumber", {
+                      pattern: /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,7}$/im
+                    })}
+                  />
+                </div>
               </div>
-            </div>
-            <div className={ModalOneStyle.formItem2}>
-              <div>
-                <label htmlFor="email">Email</label><br />
-                <input type="email" placeholder="email@domain.com" id="email" />
-              </div>
-            </div>
-          </div>
-          <div className={ModalOneStyle.form}>
-            <div className={ModalOneStyle.formItem1}>
-              <div>
-                <label htmlFor="name">First Name</label><br />
-                <input type="text" placeholder="Enter your first name" id="name" />
-              </div>
-            </div>
-            <div className={ModalOneStyle.formItem2}>
-              <div>
-                <label htmlFor="name">Last Name</label><br />
-                <input type="text" placeholder="Enter your last name" id="name" />
-              </div>
-            </div>
-          </div>
-          <div className={ModalOneStyle.form}>
-            <div className={ModalOneStyle.formItem1}>
-              <div>
-                <label htmlFor="name">Check-in Date <img src="../img/icons/date.svg" /></label><br />
-                <input onClick={() => {setCalendarDisp1(true)}} disabled={calendarDisp1} type="text" className={ModalOneStyle.customInput} value={value1.toString().slice(0, 15)} readOnly={true} placeholder="DD/MM/YYYY" id="name" />
-                <div style={{
-                  display: calendarDisp1 == false ? 'none':'flex'
-                }}>
-                  <Calendar
-                    onChange={onChange1}
-                    value={value1}
+              <div className={ModalOneStyle.formItem2}>
+                <div>
+                  <label htmlFor="email">Email</label><br />
+                  <input
+                    type="email"
+                    placeholder="email@domain.com"
+                    id="email"
+                    required
+                    {...register("email", { pattern: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i })}
                   />
                 </div>
               </div>
             </div>
-            <div className={ModalOneStyle.formItem2}>
-              <div>
-                <label htmlFor="name">Check-out Date <img src="../img/icons/date.svg" /></label><br />
-                <input onClick={() =>{setCalendarDisp2(true)}} disabled={calendarDisp2} type="text" className={ModalOneStyle.customInput} value={value2.toString().slice(0, 15)} readOnly={true} placeholder="DD/MM/YYYY" id="name" />
-                <div style={{
-                  display: calendarDisp2 == false ? 'none':'flex'
-                }}>
-                  <Calendar
-                    onChange={onChange2}
-                    value={value2}
+            <div className={ModalOneStyle.form}>
+              <div className={ModalOneStyle.formItem1}>
+                <div>
+                  <label htmlFor="name">First Name</label><br />
+                  <input
+                    placeholder="Enter your first name"
+                    id="name"
+                    required
+                    {...register("firstName", { required: true, maxLength: 20 })}
+                  />
+                </div>
+              </div>
+              <div className={ModalOneStyle.formItem2}>
+                <div>
+                  <label htmlFor="name">Last Name</label><br />
+                  <input
+                    placeholder="Enter your last name"
+                    id="name"
+                    required
+                    {...register("lastName", { required: true, maxLength: 20 })}
                   />
                 </div>
               </div>
             </div>
-          </div>
-          <input type="checkbox" className={ModalOneStyle.checkbox} /><p className={ModalOneStyle.txt1}>Request Pickup<br /><span className={ModalOneStyle.txt2}>Extra fee of <span className={ModalOneStyle.txt3}>NGN 5,000</span></span></p>
-          <div className={ModalOneStyle.block1}>
-            <img src="../img/icons/appointment.svg" style={{
-              marginRight: '16px'
-            }} />
-            <div>
-              <p className={ModalOneStyle.txt4}>
-                Booking Confirmed
-              </p>
-              <p className={ModalOneStyle.txt5}>
-                Booking available from 12/03/2022 to 16/03/2022
-              </p>
+            <input
+              type="checkbox"
+              className={ModalOneStyle.checkbox}
+              {...register("ride")}
+            />
+            <p className={ModalOneStyle.txt1}>Request Pickup<br />
+              <span className={ModalOneStyle.txt2}>Extra fee of <span className={ModalOneStyle.txt3}>NGN 5,000</span>
+              </span>
+            </p>
+
+            <div className={ModalOneStyle.form}>
+
+              <div className={ModalOneStyle.formItem2}>
+                <div>
+                  <label htmlFor="name">Select range of day(s) <img src="../img/icons/date.svg" /></label><br />
+                  <input
+                    onClick={() =>{setCalendarDisp2(true)}}
+                    disabled={calendarDisp2}
+                    className={ModalOneStyle.customInput}
+                    readOnly={true}
+                    value={formatDate(state)}
+                    placeholder="DD/MM/YYYY" id="name" />
+                  <div style={{
+                    display: calendarDisp2 == false ? 'none':'flex'
+                  }}>
+                    <CalenderRange onChange={onChange2} dateValue={state}/>
+                  </div>
+                </div>
+              </div>
             </div>
-          </div>
-          <p className={ModalOneStyle.txt6}>Booking will only be reserved for 15 minutes till payment is confirmed</p>
-          <input type="checkbox" className={ModalOneStyle.checkbox} /><p className={ModalOneStyle.txt1}>Accept <a className={ModalOneStyle.txt7} href="#">Terms & Conditions</a></p>
-          <div className={ModalOneStyle.block2}>
-            <div className={ModalOneStyle.block3}>
-              <p>{selectedRoom?.price}</p>
-              <p>Includes taxes and fees</p>
+
+            <div className={ModalOneStyle.block1}>
+              <img src="../img/icons/appointment.svg" style={{
+                marginRight: '16px'
+              }} />
+              <div>
+                <p className={ModalOneStyle.txt4}>
+                  Booking Confirmed
+                </p>
+                <p className={ModalOneStyle.txt5}>
+                  Booking available from 12/03/2022 to 16/03/2022
+                </p>
+              </div>
             </div>
-            <div className={ModalOneStyle.btn}>Proceed to payment</div>
-          </div>
+            <p className={ModalOneStyle.txt6}>
+              Booking will only be reserved for 15 minutes till payment is confirmed
+            </p>
+            <input type="checkbox" className={ModalOneStyle.checkbox} required/>
+            <p className={ModalOneStyle.txt1}>Accept <a className={ModalOneStyle.txt7} href="#">Terms & Conditions</a></p>
+            <div className={ModalOneStyle.block2}>
+              <div className={ModalOneStyle.block3}>
+                <p>{selectedRoom?.price}</p>
+                <p>Includes taxes and fees</p>
+              </div>
+              <button type={'submit'} className={ModalOneStyle.btn}>Proceed to payment</button>
+            </div>
+          </form>
         </div>
       </Modal>
       <Modal top='96px' display={modalDisp ? 'flex':'none'}>
