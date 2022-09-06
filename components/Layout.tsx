@@ -2,10 +2,11 @@ import Nav from './Nav';
 import Footer from './Footer';
 import { useRouter } from 'next/router';
 import {ReactNode} from "react";
+import withNamespacesRequired from "components/withNamespacesRequired";
 interface  ILayout {
   children: ReactNode
 }
-export default function Layout({children}: ILayout){
+function Layout({children}: ILayout){
   let path = '';
   const {asPath} = useRouter();
   if(asPath == "/cinema"){
@@ -31,3 +32,5 @@ export default function Layout({children}: ILayout){
     </>
   );
 }
+
+export default withNamespacesRequired(Layout)

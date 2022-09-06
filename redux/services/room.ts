@@ -1,10 +1,10 @@
 import {API} from "redux/services/index";
-import {IRoom} from "types/responseType";
+import {IRoomRes} from "types/responseType";
 
 
 const roomAPI = API.injectEndpoints({
   endpoints: (builder) => ({
-    fetchRoom: builder.query<IRoom, null>({
+    fetchRoom: builder.query<IRoomRes, null>({
       query: () => "/rooms"
     })
   }),

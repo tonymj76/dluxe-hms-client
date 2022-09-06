@@ -1,4 +1,5 @@
 export interface IRoom {
+  id: string;
   images: string[];
   title: string;
   description: string;
@@ -7,6 +8,10 @@ export interface IRoom {
   address: string;
   otherFeatures: string[];
   category: CategoryType;
+}
+export interface IRoomRes {
+  message: string;
+  data: IRoom[]
 }
 
 export enum CategoryType {

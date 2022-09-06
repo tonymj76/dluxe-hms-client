@@ -130,7 +130,7 @@ function Nav({path}: any) {
               </div>
             </Link>
           </div>
-          <Link href="/index">
+          <Link href="/rooms">
             <div className={NavStyles.bookNow}>Book now</div>
           </Link>
         </div>
