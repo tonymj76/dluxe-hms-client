@@ -7,3 +7,7 @@ export const formatDate = (item: IOnChange) => {
   const end = format(item?.endDate, 'dd/MM/yyyy')
   return `Checkin at ${start} and Checkout at ${end}`;
 }
+
+export const formatAmount = (item: string) => {
+  return parseInt(item).toLocaleString()
+}
