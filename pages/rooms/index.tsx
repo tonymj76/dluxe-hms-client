@@ -11,13 +11,17 @@ import {IFormInput, IRoom} from "types/responseType";
 import { useForm, SubmitHandler } from "react-hook-form";
 import CalenderRange, {IOnChange} from "components/calenderRange";
 import {addDays} from "date-fns";
-import {formatDate} from "types/helper";
+import {formatAmount, formatDate} from "types/helper";
+import {useGetRentLinkMutation} from "redux/services/rent";
 
 export default function Rooms() {
   const [selectedRoom, setSelectedRoom] = useState<IRoom>();
   const [calendarDisp2, setCalendarDisp2] = useState(false);
   const [modalDisp, setModalDisp] = useState(false);
   const [modalDisp1, setModalDisp1] = useState(false);
+  const [paymentLinkUrl, setPaymentLinkUrl] = useState("");
+  const [error, setError] = useState("");
+  const [getPaymentLink] = useGetRentLinkMutation();
 
   const [state, setState] = useState<IOnChange>(
     {
@@ -29,10 +33,33 @@ export default function Rooms() {
   const {data: roomData, isFetching } = useFetchRoomQuery(null, {
     skip: false,
   })
-
   const { register, handleSubmit } = useForm<IFormInput>();
-  const onSubmit: SubmitHandler<IFormInput> = data => console.log(data);
 
+  const onSubmit: SubmitHandler<IFormInput> = async (data) => {
+    data.ride
+    const payload = {
+      ...data,
+      startDate: state.startDate,
+      endDate: state.endDate,
+      amount: selectedRoom?.price,
+      roomId: selectedRoom?.id
+    }
+    try {
+      const paymentLink = await getPaymentLink({...payload}).unwrap()
+      setPaymentLinkUrl(paymentLink?.data.link)
+    } catch (e:any) {
+      const error = e?.data?.error || e?.data?.message || e?.message
+      setError(error)
+    }
+  };
+  useEffect(() => {
+    if(paymentLinkUrl) {
+      window.location.assign(paymentLinkUrl)
+    }
+    return () => {
+      setPaymentLinkUrl("")
+    }
+  })
   const rooms = useMemo(() => {
     if(!roomData) return [];
     return [...roomData?.data]
@@ -59,6 +86,7 @@ export default function Rooms() {
 
   function onChange2(nextValue: any) {
     setState(nextValue);
+    setError("")
     setTimeout(() =>{setCalendarDisp2(false);}, 3000)
   }
 
@@ -208,31 +236,56 @@ export default function Rooms() {
                 </div>
               </div>
             </div>
-
-            <div className={ModalOneStyle.block1}>
-              <img src="../img/icons/appointment.svg" style={{
-                marginRight: '16px'
-              }} />
-              <div>
-                <p className={ModalOneStyle.txt4}>
-                  Booking Confirmed
-                </p>
-                <p className={ModalOneStyle.txt5}>
-                  Booking available from 12/03/2022 to 16/03/2022
-                </p>
-              </div>
-            </div>
-            <p className={ModalOneStyle.txt6}>
-              Booking will only be reserved for 15 minutes till payment is confirmed
-            </p>
+            {
+              paymentLinkUrl && (
+                <>
+                  <div className={ModalOneStyle.block1}>
+                    <img src="../img/icons/appointment.svg" style={{
+                      marginRight: '16px'
+                    }} />
+                    <div>
+                      <p className={ModalOneStyle.txt4}>
+                        Booking Confirmed
+                      </p>
+                      <p className={ModalOneStyle.txt5}>
+                        Booking available from {state.startDate.toString()} to {state.endDate.toString()}
+                      </p>
+                    </div>
+                  </div>
+                  <p className={ModalOneStyle.txt6}>
+                    Booking will only be reserved for 15 minutes till payment is confirmed
+                  </p>
+                </>
+              )
+            }
+            {
+              error && (
+                <>
+                  <div className={ModalOneStyle.block_error}>
+                    <div>
+                      <p className={ModalOneStyle.txt6}>
+                        Not Successful
+                      </p>
+                      <p className={ModalOneStyle.txt5}>
+                        {error}: Please choose another date
+                      </p>
+                    </div>
+                  </div>
+                </>
+              )
+            }
             <input type="checkbox" className={ModalOneStyle.checkbox} required/>
             <p className={ModalOneStyle.txt1}>Accept <a className={ModalOneStyle.txt7} href="#">Terms & Conditions</a></p>
             <div className={ModalOneStyle.block2}>
               <div className={ModalOneStyle.block3}>
-                <p>{selectedRoom?.price}</p>
+                <p>{formatAmount(selectedRoom?.price.toLocaleString())}</p>
                 <p>Includes taxes and fees</p>
               </div>
-              <button type={'submit'} className={ModalOneStyle.btn}>Proceed to payment</button>
+              <button
+                type={'submit'}
+                className={ModalOneStyle.btn}>
+                 Proceed to Payment
+              </button>
             </div>
           </form>
         </div>
@@ -309,7 +362,7 @@ export default function Rooms() {
             width:'100%'
           }}>
             <div className={Styles.money}>
-              <p>{selectedRoom?.price}</p>
+              <p>{formatAmount(selectedRoom?.price.toLocaleString())}</p>
               <p>Includes taxes and fees</p>
             </div>
             <div>
