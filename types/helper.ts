@@ -8,6 +8,7 @@ export const formatDate = (item: IOnChange) => {
   return `Checkin at ${start} and Checkout at ${end}`;
 }
 
-export const formatAmount = (item: string) => {
+export const formatAmount = (item: string | undefined) => {
+  if(!item) return "N/A"
   return parseInt(item).toLocaleString()
 }
