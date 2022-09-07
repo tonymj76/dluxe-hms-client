@@ -1,6 +1,7 @@
 import React, {memo} from 'react';
 import Styles from "/public/css/rooms.module.css";
 import {IRoom, IRoomRes} from "types/responseType";
+import {formatAmount} from "types/helper";
 
 interface IRoomItems {
   room: IRoom[];
@@ -71,7 +72,7 @@ function RoomItem ({item, setModal, setSelectedRoom}: IRoomItem) {
 
         <div className={Styles.bookingCardItem2}>
           <div className={Styles.bookingCardPriceTag}>
-            <h3>{item.price}</h3>
+            <h3>{formatAmount(item.price.toLocaleString())}</h3>
             <p>Includes taxes and fees</p>
           </div>
           <div className={Styles.bookingCardBtn} onClick={handleClick}>Book now</div>
