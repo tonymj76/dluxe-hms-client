@@ -267,7 +267,9 @@ export default function Rooms() {
                         Not Successful
                       </p>
                       <p className={ModalOneStyle.txt5}>
-                        {error}: Please choose another date
+                        {error === 'we have overlapping'
+                          ? "we have overlapping date: Please choose another date"
+                          : "an error occurred please try again"}:
                       </p>
                     </div>
                   </div>
