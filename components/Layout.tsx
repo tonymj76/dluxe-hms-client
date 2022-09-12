@@ -24,6 +24,9 @@ function Layout({children}: ILayout){
   if(asPath == "/gym"){
     path = "gym";
   }
+  if(asPath.includes("/success")) {
+    path = "success";
+  }
   return (
     <>
       <Nav path={path} />
