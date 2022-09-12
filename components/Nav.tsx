@@ -1,4 +1,4 @@
-import {useEffect, useState} from 'react';
+import {useState} from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { Menu, X } from 'react-feather';
@@ -6,7 +6,7 @@ import { CSSTransition } from 'react-transition-group';
 import NavStyles from './Nav.module.css';
 let hardLink = false;
 
-function Nav({path}: any) {
+function Nav({path}: {path: string }) {
   const router = useRouter();
   const {asPath} = useRouter();
   const [select, setSelect] = useState(path);
@@ -23,14 +23,18 @@ function Nav({path}: any) {
     setBookingID('');
     setMenuState('white');
   }
-  useEffect(() => {
-    console.log(asPath)
-  }, [asPath])
 
   return (
     <>
       <div className={NavStyles.nav} style={{
-        display:(asPath =='/rooms' || asPath =='/spa' || asPath =='/gym' || asPath =='/cinema' || asPath =='/rooftop' || asPath =='/')  ? 'flex':'none'
+        display:(asPath =='/rooms'
+          || asPath =='/spa'
+          || asPath =='/gym'
+          || asPath =='/cinema'
+          || asPath =='/rooftop'
+          || asPath =='/'
+          || asPath.includes("/success")
+        )  ? 'flex':'none'
       }}>
         <img className={NavStyles.logo} src='../logo.svg' />
         <div style={{
