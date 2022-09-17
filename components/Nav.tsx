@@ -1,4 +1,4 @@
-import {useState} from 'react';
+import {useEffect, useState} from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { Menu, X } from 'react-feather';
@@ -11,10 +11,20 @@ function Nav({path}: {path: string }) {
   const {asPath} = useRouter();
   const [select, setSelect] = useState(path);
   const [bookingID, setBookingID] = useState("");
+  const [checkBookingID, setCheckBookingID] = useState("");
   const [menuState, setMenuState] = useState("white");
+  const regexp = new RegExp('DL-[a-z0-9]{8}$', 'i')
   const menuHandler = () => {
     menuState == "white" ? setMenuState('#92a4df') : setMenuState("white");
   }
+
+  useEffect(() => {
+    return () => {
+      setBookingID("")
+      setCheckBookingID("")
+    }
+  }, [])
+
   const navClick = (arg: any) => {
     setSelect(arg);
     setMenuState('white');
@@ -121,14 +131,15 @@ function Nav({path}: {path: string }) {
           <div className={NavStyles.input}>
             <input type="text" onKeyUp={(e) => {
               e.preventDefault();
-              if(e.key == "Enter"){
-                router.push(`booking/${bookingID}`);
+              if(e.key === "Enter"){
+                router.push(bookingID ? `booking/${bookingID}`: asPath).then();
               }
             }} onChange={(e) => {
               let param = e.target.value;
-              setBookingID(param)
-            }} value={bookingID} placeholder="Booking ID" />
-            <Link href={`booking/${bookingID}`}>
+              if(regexp.test(param)) setBookingID(param)
+              setCheckBookingID(param)
+            }} value={checkBookingID} placeholder="Booking ID" />
+            <Link href={bookingID ? `booking/${bookingID}`: asPath}>
               <div onClick={() => trackClick()}>
                 <img src="../img/icons/arrow.svg" />
               </div>
