@@ -1,10 +1,12 @@
 import { useRouter } from 'next/router'
 import Head from 'next/head'
 import Styles from '../../public/css/bookingid.module.css'
+import {useGetBookByRef} from "hooks/useGetBookByRef";
 
 export default function BookingID() {
 const router = useRouter();
 const { id }  =  router.query;
+  const [data] = useGetBookByRef(id as string)
   return (
     <>
     <div className="container">
