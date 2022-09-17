@@ -1,10 +1,11 @@
+
 import Head from 'next/head'
 import { useState } from 'react'
 import { useRouter } from 'next/router'
 import Link from 'next/link';
 import Modal from '../../components/Modal'
 import Styles from '../../public/css/bookspa.module.css';
-import Calendar from 'react-calendar';
+
 import 'react-calendar/dist/Calendar.css';
 import ModalOneStyle from '../../components/BookNow.module.css';
 
@@ -15,7 +16,7 @@ export default function Spa(){
   const [calendarDisp1, setCalendarDisp1] = useState(false);
   const [value1, setValue1] = useState(new Date());
 
-  function onChange1(nextValue) {
+  function onChange1(nextValue : any) {
     setValue1(nextValue);
     setCalendarDisp1(false);
   }
@@ -79,10 +80,7 @@ export default function Spa(){
               <div style={{
                 display: calendarDisp1 == false ? 'none':'flex'
               }}>
-                <Calendar
-                  onChange={onChange1}
-                  value={value1}
-                />
+              {/*  Calender needs to be here*/}
               </div>
             </div>
           </div>
