@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import Styles from '../../public/css/bookingSuccess.module.css'
 import {useRouter} from "next/router";
-import {formatToUpper} from "/types/helper";
+import {formatToUpper} from "types/helper";
 
 export default function BookingSuccess() {
   const {query} = useRouter()
