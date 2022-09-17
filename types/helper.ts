@@ -13,7 +13,8 @@ export const formatAmount = (item: string | undefined) => {
   return parseInt(item).toLocaleString()
 }
 
-export const formatToUpper = (item: string | undefined| null) => {
+export const formatToUpper = (item: string | undefined| null | string[] ) => {
   if(!item) return undefined;
+  item = item as string
   return item.toUpperCase()
 }

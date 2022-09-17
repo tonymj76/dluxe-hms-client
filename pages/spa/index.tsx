@@ -3,14 +3,13 @@ import { useState } from 'react'
 import Modal from '../../components/Modal'
 import Link from 'next/link';
 import Styles from '../../public/css/spa.module.css';
-import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
 import ModalOneStyle from '../../components/BookNow.module.css';
 export default function Spa(){
   const [modalDisp, setModalDisp] = useState(false);
   const [calendarDisp1, setCalendarDisp1] = useState(false);
   const [value1, setValue1] = useState(new Date());
-  function onChange1(nextValue) {
+  function onChange1(nextValue : any) {
     setValue1(nextValue);
     setCalendarDisp1(false);
   }
@@ -74,10 +73,10 @@ export default function Spa(){
               <div style={{
                 display: calendarDisp1 == false ? 'none':'flex'
               }}>
-                <Calendar
-                  onChange={onChange1}
-                  value={value1}
-                />
+                {/*<Calendar*/}
+                {/*  onChange={onChange1}*/}
+                {/*  value={value1}*/}
+                {/*/>*/}
               </div>
             </div>
           </div>

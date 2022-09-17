@@ -1,3 +1,4 @@
+// @ts-nocheck
 import React, {useState, useRef, useEffect, useMemo} from 'react'
 import Modal from '../../components/Modal'
 import ModalOneStyle from '../../components/BookNow.module.css';
@@ -30,7 +31,7 @@ export default function Rooms() {
       key: 'selection'
     }
   );
-  const {data: roomData, isFetching } = useFetchRoomQuery(null, {
+  const {data: roomData } = useFetchRoomQuery(null, {
     skip: false,
   })
   const { register, handleSubmit } = useForm<IFormInput>();
