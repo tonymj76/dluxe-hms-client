@@ -28,10 +28,10 @@ export interface IFormInput {
 }
 
 export interface IBookingDetail {
-  createdAt: Date;
+  createdAt: string;
   status: string;
-  checkInDate: Date;
-  checkOutDate: Date;
+  checkInDate: string;
+  checkOutDate: string;
   BookingReference: string;
   name: string;
   email: string;
