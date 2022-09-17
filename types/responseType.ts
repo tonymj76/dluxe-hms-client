@@ -26,3 +26,15 @@ export interface IFormInput {
   email: string;
   ride: boolean;
 }
+
+export interface IBookingDetail {
+  createdAt: Date;
+  status: string;
+  checkInDate: Date;
+  checkOutDate: Date;
+  BookingReference: string;
+  name: string;
+  email: string;
+  phoneNumber: string;
+  rents: any;
+}
