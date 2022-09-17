@@ -1,6 +1,6 @@
 import React, {memo} from 'react';
 import Styles from "/public/css/rooms.module.css";
-import {IRoom, IRoomRes} from "types/responseType";
+import {IRoom} from "types/responseType";
 import {formatAmount} from "types/helper";
 
 interface IRoomItems {
