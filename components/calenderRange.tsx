@@ -72,7 +72,6 @@ function CalenderRange({defaultLabel, onChange, dateValue}: ICustomCalenderProps
   const isStaticRange = useRef<'static' | 'custom'>('static');
 
   const handleSelectionChange = (item:any) => {
-    console.log(item)
     onChange(item.selection)
   }
 

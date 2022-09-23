@@ -11,7 +11,7 @@ import  RoomItems from "components/roomItems";
 import {IFormInput, IRoom} from "types/responseType";
 import { useForm, SubmitHandler } from "react-hook-form";
 import CalenderRange, {IOnChange} from "components/calenderRange";
-import {addDays} from "date-fns";
+import {addDays, differenceInHours} from "date-fns";
 import {formatAmount, formatDate} from "types/helper";
 import {useGetRentLinkMutation} from "redux/services/rent";
 
@@ -23,6 +23,7 @@ export default function Rooms() {
   const [paymentLinkUrl, setPaymentLinkUrl] = useState("");
   const [error, setError] = useState("");
   const [getPaymentLink] = useGetRentLinkMutation();
+  const [amount, setAmount] = useState(selectedRoom?.price??0)
 
   const [state, setState] = useState<IOnChange>(
     {
@@ -31,6 +32,18 @@ export default function Rooms() {
       key: 'selection'
     }
   );
+
+  useEffect(() => {
+    const checkOut = state.endDate;
+    const checkIn = state.startDate;
+    if (!selectedRoom?.price) return;
+    setAmount(() => {
+      const numberOfDays = Math.floor(differenceInHours(checkOut, checkIn)/24)|0
+      if(numberOfDays) return (selectedRoom.price  * numberOfDays)
+      return selectedRoom.price
+    })
+  }, [state.startDate, state.endDate])
+
   const {data: roomData } = useFetchRoomQuery(null, {
     skip: false,
   })
@@ -42,7 +55,7 @@ export default function Rooms() {
       ...data,
       startDate: state.startDate,
       endDate: state.endDate,
-      amount: selectedRoom?.price,
+      amount,
       roomId: selectedRoom?.id
     }
     try {
@@ -281,7 +294,7 @@ export default function Rooms() {
             <p className={ModalOneStyle.txt1}>Accept <a className={ModalOneStyle.txt7} href="#">Terms & Conditions</a></p>
             <div className={ModalOneStyle.block2}>
               <div className={ModalOneStyle.block3}>
-                <p>{formatAmount(selectedRoom?.price.toLocaleString())}</p>
+                <p>{formatAmount(amount || selectedRoom?.price.toLocaleString())}</p>
                 <p>Includes taxes and fees</p>
               </div>
               <button

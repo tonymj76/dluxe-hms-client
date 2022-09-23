@@ -230,9 +230,6 @@ export default function Home() {
         </div>
         <div className={IndexStyle.section3}>
 
-          {/*
-          I removed the static rooms here
-          */}
 
           <div style={{
             display:'flex',
